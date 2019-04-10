@@ -4,5 +4,13 @@
   "description": "API for questions and sms",
   "main": "index.js",
   "author": "Necoline Hubner",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "server": "node ./index.js"
+  },
+  "dependencies": {
+    "hapi": "^18.1.0",
+    "mongoose": "^5.5.0",
+    "morgan": "^1.9.1"
+  }
 }
