@@ -1,0 +1,8 @@
+{
+  "name": "twilioApi",
+  "version": "1.0.0",
+  "description": "API for questions and sms",
+  "main": "index.js",
+  "author": "Necoline Hubner",
+  "license": "MIT"
+}
