@@ -40,10 +40,8 @@ exports.get = (req, h) => {
 exports.create = (req, h) => {
 
   const postData = {
-    name: req.payload.name,
-    breed: req.payload.breed,
-    age: req.payload.age,
-    image: req.payload.image
+    post.question = req.payload.question;
+    post.voteCount = req.payload.voteCount;
   };
 
   return Post.create(postData).then((Post) => {
@@ -66,10 +64,8 @@ exports.update = (req, h) => {
 
     if (!post) return { err: 'Post not found' };
 
-    post.name = req.payload.name;
-    post.breed = req.payload.breed;
-    post.age = req.payload.age;
-    post.image = req.payload.image;
+    post.question = req.payload.question;
+    post.voteCount = req.payload.voteCount;
 
     post.save(postData);
 
