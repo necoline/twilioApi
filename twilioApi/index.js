@@ -26,35 +26,50 @@ const initRoutes = server => {
       },
     });
 
-    // server.route({
-    //   method: 'GET',
-    //   path: '/posts',
-    //   handler: PostController.list
-    // });
+    server.route({
+      method: 'GET',
+      path: '/posts/list',
+      handler: PostController.list,
+      config: {
+        auth: false,
+      },
+    });
     
-    // server.route({
-    //   method: 'GET',
-    //   path: '/posts/{id}',
-    //   handler: PostController.get
-    // });
+    server.route({
+      method: 'GET',
+      path: '/posts/get/{id}',
+      handler: PostController.get,
+      config: {
+        auth: false,
+      },
+    });
 
-    // server.route({
-    //   method: 'POST',
-    //   path: '/posts',
-    //   handler: PostController.create
-    // });
+    server.route({
+      method: 'POST',
+      path: '/posts/create',
+      handler: PostController.create,
+      config: {
+        auth: false,
+      },
+    });
     
-    // server.route({
-    //   method: 'PUT',
-    //   path: '/posts/{id}',
-    //   handler: PostController.update
-    // });
+    server.route({
+      method: 'PUT',
+      path: '/posts/update/{id}',
+      handler: PostController.update,
+      config: {
+        auth: false,
+      },
+    });
     
-    // server.route({
-    //   method: 'DELETE',
-    //   path: '/posts/{id}',
-    //   handler: PostController.remove
-    // });
+    server.route({
+      method: 'DELETE',
+      path: '/posts/remove/{id}',
+      handler: PostController.remove,
+      config: {
+        auth: false,
+      },
+    });
     
 };
 
@@ -65,13 +80,13 @@ const initRoutes = server => {
   
       console.log(`Server running at: ${server.info.uri}`);
   
-      const mongoURI = 'mongodb+srv://necoline:24Gssckr%5E@cluster0-bbuus.mongodb.net/test?retryWrites=true'
+      const mongoURI = 'mongoConnectionString'
   
       mongoose.connect(mongoURI, { useNewUrlParser: true });
       var db = mongoose.connection;
   
       db.on('error', (err) => {
-        console.log('Mongoose default connection open to ' + mongoURI);
+        console.log('connected to DB')
         console.error.bind(console, 'connection error:')
         });
       db.once('open', () => {

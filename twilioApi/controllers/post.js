@@ -1,4 +1,4 @@
-var Post =  require('../models/post');
+const Post =  require('../models/post');
 
 /**
  * List Posts
@@ -38,14 +38,17 @@ exports.get = (req, h) => {
  * POST a Post
  */
 exports.create = (req, h) => {
+    console.log('post req', req.payload)
 
   const postData = {
-    post.question = req.payload.question;
-    post.voteCount = req.payload.voteCount;
+    question: req.payload.question,
+    voteCount: req.payload.voteCount || 0
   };
 
-  return Post.create(postData).then((Post) => {
+  console.log('postData', postData )
 
+  return Post.create(postData).then((post) => {
+    console.log('post', post)
      return { message: "Post created successfully", post: post };
 
   }).catch((err) => {
