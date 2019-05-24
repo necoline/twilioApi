@@ -38,8 +38,6 @@ exports.get = (req, h) => {
  * POST a Post
  */
 exports.create = (req, h) => {
-    console.log('post req', req.payload)
-
   const postData = {
     question: req.payload.question,
     voteCount: req.payload.voteCount || 0
@@ -52,6 +50,7 @@ exports.create = (req, h) => {
      return { message: "Post created successfully", post: post };
 
   }).catch((err) => {
+    console.log('error')
 
     return { err: err };
 

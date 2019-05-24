@@ -80,7 +80,7 @@ const initRoutes = server => {
   
       console.log(`Server running at: ${server.info.uri}`);
   
-      const mongoURI = 'mongoConnectionString'
+      const mongoURI = 'mongodb+srv://neco:sir2019@cluster0-tjdkc.mongodb.net/test?retryWrites=true'
   
       mongoose.connect(mongoURI, { useNewUrlParser: true });
       var db = mongoose.connection;
