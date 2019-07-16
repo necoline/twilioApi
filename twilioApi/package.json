@@ -9,6 +9,7 @@
     "start": "node ./index.js"
   },
   "dependencies": {
+    "dotenv": "^8.0.0",
     "hapi": "^18.1.0",
     "mongoose": "^5.5.0",
     "morgan": "^1.9.1"
