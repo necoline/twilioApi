@@ -86,8 +86,7 @@ const initRoutes = server => {
     var db = mongoose.connection;
 
     db.on("error", err => {
-      console.error.bind(console, "connection error:");
-      console.log("not connected to DB", err);
+      console.error("not connected to DB: ", err);
     });
     db.once("open", () => {
       console.log("Connected to DB");
